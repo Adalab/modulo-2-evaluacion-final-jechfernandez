@@ -48,7 +48,7 @@ function paintSeriesCards () {
 
     htmlCode += `<li class="main__list--item${favClass}" id="${serie.show.id}">`;
     htmlCode += `<h3 class="main__card--title">${serie.show.name}</h3>`;
-    
+
     if (serie.show.image === null) {
       htmlCode += `<img class="js-image main__card--img" src="./assets/images/no-image-found.png" alt="${serie.show.name}" />`;
     } else {
@@ -61,7 +61,6 @@ function paintSeriesCards () {
   const listElement = document.querySelector ('.js-list');
   listElement.innerHTML = htmlCode;
 }
-
 getApisData ();
 
 function enterKey (event) {
@@ -71,3 +70,4 @@ function enterKey (event) {
 }
 
 document.addEventListener ('keyup', enterKey);
+

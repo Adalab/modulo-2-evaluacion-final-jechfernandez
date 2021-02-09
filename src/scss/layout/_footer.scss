@@ -1,15 +1,22 @@
 .footer {
-  position: fixed;
+  position: static;
   margin-top: 10px;
   left: 0;
   bottom: 0;
   width: 100vw;
-  padding: 0.5rem;
+  padding: 10px 15px;
   font-family: $font-second;
   border-top: 1px solid $color-details;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.8;
 
   &__small{
-  color: $color-highlight2;
-  opacity: 0.8;
+  color: $color-details;
+  }
+
+  &__logo{
+    height: 40px;
   }
 }

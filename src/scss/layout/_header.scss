@@ -1,7 +1,10 @@
 .header {
   margin-top: 10px;
-  border-bottom: 2px solid $color-details;margin-bottom: 15px;
+  border-bottom: 2px solid $color-highlight2;margin-bottom: 15px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 
   &__logo {
     width: 250px;
@@ -11,21 +14,21 @@
 
   &__form{
 
-    
-    
+    margin-right: 30px;
 
     &--input{
-      border: 1px solid $color-details;
+      border: 1px solid $color-highlight1;
       height:30px;
       border-radius: 5px;
       margin-bottom: 10px;
       padding-left: 5px;
-      font-family: $font-second;
+      font-family: $font-main;
     }
 
     &--btn{
       font-family: 'Roboto', sans-serif;
-      color: $color-bg;
+      color: $color-details;
+      border: 1px solid $color-highlight2;
       width: 80px;
       height: 30px;
       border-radius:5px;  

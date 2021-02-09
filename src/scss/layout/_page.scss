@@ -1,9 +1,6 @@
 body {
   height: 100vh;
   margin: 0;
-  padding: 0 30px;
-  // display: flex;
-  // flex-direction: column;
   background-color: $color-bg;
   align-items: flex-start;
 }
@@ -11,6 +8,8 @@ body {
 
 
 .main{
+  
+  padding: 0 30px;
 
   &__list{
     display: flex;
@@ -20,7 +19,8 @@ body {
     &--item{
       list-style: none;
       margin-bottom: 30px;
-      background-color: $color-details;
+      border: 2px solid $color-highlight1;
+      border-radius: 5px;
       padding: 10px;
     }
   }
