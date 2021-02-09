@@ -22,6 +22,10 @@ body {
     }
   }
 
+  // &__container--faved{
+  //   width: 30%;
+  // }
+
   &__subtitle {
     font-family: $font-main;
     color: $color-text;
@@ -37,5 +41,16 @@ body {
 
   &__card--image {
     margin: 10px;
+  }
+
+  &__faved--button{
+      font-family: 'Roboto', sans-serif;
+      color: $color-details;
+      border: 1px solid $color-highlight2;
+      width: 120px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: $font-main;
   }
 }
