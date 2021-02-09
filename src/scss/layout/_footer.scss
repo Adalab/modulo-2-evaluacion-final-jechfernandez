@@ -1,8 +1,15 @@
-.page__footer {
+.footer {
   position: fixed;
+  margin-top: 10px;
   left: 0;
   bottom: 0;
   width: 100vw;
-  padding: 1rem;
-  color: $color-secondary;
+  padding: 0.5rem;
+  font-family: $font-second;
+  border-top: 1px solid $color-details;
+
+  &__small{
+  color: $color-highlight2;
+  opacity: 0.8;
+  }
 }

@@ -9,16 +9,16 @@ const searchInputElement = document.querySelector ('.js-search-input');
 const searchButtonElement = document.querySelector ('.js-search-button');
 const listElement = document.querySelector ('.js-series-list');
 
-//SERIES'S ARRAY
+//SERIES'S ARRAYS
 let series = [];
 let favouriteSeries = [];
 
 //PREVENT SUBMIT FORM
-document
-  .querySelector ('.js-search-button')
-  .addEventListener ('click', function (event) {
-    event.preventDefault ();
-  });
+function handleForm (ev) {
+  ev.preventDefault ();
+}
+
+formElement.addEventListener ('submit', handleForm);
 
 //FETCH DATA FROM API
 function getApisData () {
@@ -26,6 +26,7 @@ function getApisData () {
   fetch (apiLink + searchValue)
     .then (response => response.json ())
     .then (data => {
+      console.log ('series');
       series = data;
       paintSeriesCards ();
     });
@@ -35,27 +36,57 @@ searchButtonElement.addEventListener ('click', getApisData);
 
 //PAINT CARDS
 function paintSeriesCards () {
-  let htmlCode;
+  let htmlCode = '<ul class="main__list">';
+  let favClass;
   for (const serie of series) {
-    htmlCode += '<article class="main__card">';
-    htmlCode += `<h3 class="main__card--title">${serie.show.name}</h3>`;
-    if (serie.show.image === null) {
-      htmlCode += `<img class="js-image main__card--img" src="${noImage}" alt="${serie.show.name}" />`;
+    const isFaved = favouriteSeries.find (
+      favSerie => favSerie.show.id === serie.show.id
+    );
+    if (isFaved === undefined) {
+      favClass = '';
     } else {
-      htmlCode += `<img class="js-image main__card--img" src="${serie.show.image.medium}" alt="${serie.show.name}" />`;
+      favClass = 'card--favourite';
     }
-    htmlCode += '</li>';
-    htmlCode += '</article>';
+
+    //PAINT IT DARLING
+    htmlCode += `<li class="js-list-element${favClass}" id="${serie.show.id}">`;
+    if (serie.show.officialSite === null) {
+      htmlCode += `<h3 class="main__card--title">${serie.show.name}</h3>`;
+    } else {
+      htmlCode += '<h3 class="main__card--title"></h3>';
+    //   htmlCode += `<a href="${serie.show.officialSite}" target="_blank" title="${serie.show.name} official site">${serie.show.name}</a>`;
+    //   htmlCode += '</h3>';
+    }
+    if (serie.show.image === null) {
+        htmlCode += `<img class="js-image main__card--img" src="${noImage}" alt="${serie.show.name}" />`;
+      } else {
+        htmlCode += `<img class="js-image main__card--img" src="${serie.show.image.medium}" alt="${serie.show.name}" />`;
+      }
+      
+      htmlCode += '</li>';
   }
+  htmlCode += '</ul>';
+  const listElement = document.querySelector('.js-list');
   listElement.innerHTML = htmlCode;
 }
+
+//     if (serie.show.image === null) {
+//       htmlCode += `<img class="js-image main__card--img" src="${noImage}" alt="${serie.show.name}" />`;
+//     } else {
+//       htmlCode += `<img class="js-image main__card--img" src="${serie.show.image.medium}" alt="${serie.show.name}" />`;
+//     }
+//     htmlCode += '</li>';
+//     htmlCode += '</ul>';
+//   }
+//   listElement.innerHTML = htmlCode;
+// }
 
 getApisData ();
 
 function enterKey (event) {
-    if (event.key==='Enter') {
-        paintSeriesCards();
-    }
+  if (event.key === 'Enter') {
+    paintSeriesCards ();
+  }
 }
 
-document.addEventListener('keyup', enterKey);
+document.addEventListener ('keyup', enterKey);

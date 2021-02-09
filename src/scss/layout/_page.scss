@@ -1,7 +1,14 @@
 body {
-  padding: 2rem;
   height: 100vh;
-  // background-image: url('../images/bg-adalab.png');
-  // background-color: $color-bg;
+  margin: 0;
+  padding: 0 30px;
+  // display: flex;
+  // flex-direction: column;
+  background-color: $color-bg;
+  align-items: flex-start;
+}
+
+.main__subtitle{
   font-family: $font-main;
+  color: $color-text;
 }
