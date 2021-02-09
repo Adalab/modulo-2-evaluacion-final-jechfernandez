@@ -48,38 +48,24 @@ function paintSeriesCards () {
       favClass = 'card--favourite';
     }
 
-    //PAINT IT DARLING
     htmlCode += `<li class="js-list-element${favClass}" id="${serie.show.id}">`;
     if (serie.show.officialSite === null) {
       htmlCode += `<h3 class="main__card--title">${serie.show.name}</h3>`;
     } else {
       htmlCode += '<h3 class="main__card--title"></h3>';
-    //   htmlCode += `<a href="${serie.show.officialSite}" target="_blank" title="${serie.show.name} official site">${serie.show.name}</a>`;
-    //   htmlCode += '</h3>';
     }
     if (serie.show.image === null) {
-        htmlCode += `<img class="js-image main__card--img" src="${noImage}" alt="${serie.show.name}" />`;
-      } else {
-        htmlCode += `<img class="js-image main__card--img" src="${serie.show.image.medium}" alt="${serie.show.name}" />`;
-      }
-      
-      htmlCode += '</li>';
+      htmlCode += `<img class="js-image main__card--img" src="${noImage}" alt="${serie.show.name}" />`;
+    } else {
+      htmlCode += `<img class="js-image main__card--img" src="${serie.show.image.medium}" alt="${serie.show.name}" />`;
+    }
+
+    htmlCode += '</li>';
   }
   htmlCode += '</ul>';
-  const listElement = document.querySelector('.js-list');
+  const listElement = document.querySelector ('.js-list');
   listElement.innerHTML = htmlCode;
 }
-
-//     if (serie.show.image === null) {
-//       htmlCode += `<img class="js-image main__card--img" src="${noImage}" alt="${serie.show.name}" />`;
-//     } else {
-//       htmlCode += `<img class="js-image main__card--img" src="${serie.show.image.medium}" alt="${serie.show.name}" />`;
-//     }
-//     htmlCode += '</li>';
-//     htmlCode += '</ul>';
-//   }
-//   listElement.innerHTML = htmlCode;
-// }
 
 getApisData ();
 
