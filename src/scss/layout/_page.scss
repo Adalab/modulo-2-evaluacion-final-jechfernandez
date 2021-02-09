@@ -8,7 +8,38 @@ body {
   align-items: flex-start;
 }
 
-.main__subtitle{
-  font-family: $font-main;
-  color: $color-text;
+
+
+.main{
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &--item{
+      list-style: none;
+      margin-bottom: 30px;
+      background-color: $color-details;
+      padding: 10px;
+    }
+  }
+
+  &__subtitle{
+    font-family: $font-main;
+    color: $color-text;
+    margin-bottom: 10px;
+  }
+
+  &__card--title{
+    font-family: $font-main;
+    color: $color-text;
+    margin-bottom: 15px;
+    max-width: 210px;
+  }
+
+  &__card--image{
+    margin: 10px;
+  }
+
 }

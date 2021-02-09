@@ -2,8 +2,6 @@
 
 //RETRIEVE ELEMENTS FROM HTML
 const apiLink = 'http://api.tvmaze.com/search/shows?q=';
-const noImageText = 'Image not found, sorry!';
-const noImage = `https://via.placeholder.com/210x295/ffffff/666666/?text=${noImageText}`;
 const formElement = document.querySelector ('.js-form');
 const searchInputElement = document.querySelector ('.js-search-input');
 const searchButtonElement = document.querySelector ('.js-search-button');
@@ -48,14 +46,11 @@ function paintSeriesCards () {
       favClass = 'card--favourite';
     }
 
-    htmlCode += `<li class="js-list-element${favClass}" id="${serie.show.id}">`;
-    if (serie.show.officialSite === null) {
-      htmlCode += `<h3 class="main__card--title">${serie.show.name}</h3>`;
-    } else {
-      htmlCode += '<h3 class="main__card--title"></h3>';
-    }
+    htmlCode += `<li class="main__list--item${favClass}" id="${serie.show.id}">`;
+    htmlCode += `<h3 class="main__card--title">${serie.show.name}</h3>`;
+    
     if (serie.show.image === null) {
-      htmlCode += `<img class="js-image main__card--img" src="${noImage}" alt="${serie.show.name}" />`;
+      htmlCode += `<img class="js-image main__card--img" src="./assets/images/no-image-found.png" alt="${serie.show.name}" />`;
     } else {
       htmlCode += `<img class="js-image main__card--img" src="${serie.show.image.medium}" alt="${serie.show.name}" />`;
     }
