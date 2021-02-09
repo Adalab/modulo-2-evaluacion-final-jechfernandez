@@ -70,4 +70,3 @@ function enterKey (event) {
 }
 
 document.addEventListener ('keyup', enterKey);
-

@@ -5,41 +5,37 @@ body {
   align-items: flex-start;
 }
 
-
-
-.main{
-  
+.main {
   padding: 0 30px;
 
-  &__list{
+  &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
-    &--item{
+    &--item {
       list-style: none;
       margin-bottom: 30px;
-      border: 2px solid $color-highlight1;
+      border: 2px solid $color-highlight2;
       border-radius: 5px;
       padding: 10px;
     }
   }
 
-  &__subtitle{
+  &__subtitle {
     font-family: $font-main;
     color: $color-text;
     margin-bottom: 10px;
   }
 
-  &__card--title{
+  &__card--title {
     font-family: $font-main;
     color: $color-text;
     margin-bottom: 15px;
     max-width: 210px;
   }
 
-  &__card--image{
+  &__card--image {
     margin: 10px;
   }
-
 }
