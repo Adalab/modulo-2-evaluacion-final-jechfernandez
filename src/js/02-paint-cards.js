@@ -1,4 +1,5 @@
-//Paint Cards
+'use strict';
+
 function paintSeriesCards () {
   let htmlCode = '<ul class="main__list">';
   let favClass;
@@ -41,7 +42,7 @@ function paintFaved (ev) {
         isFaved = true;
       }
     }
-    if (!isFaved && currentSerie.show.id == parseInt(ev)) {
+    if (!isFaved && currentSerie.show.id == parseInt (ev)) {
       console.log (currentSerie);
       favouriteSeries.push (currentSerie);
 

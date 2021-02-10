@@ -1,3 +1,5 @@
+'use strict';
+
 function getApisData () {
   const searchValue = searchInputElement.value;
   fetch (apiLink + searchValue)
