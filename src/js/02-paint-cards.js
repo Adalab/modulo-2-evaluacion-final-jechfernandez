@@ -5,7 +5,7 @@ function paintSeriesCards () {
   let favClass;
   for (const serie of series) {
     const isFaved = favouriteSeries.find (favSerie => {
-      return favSerie.id === serie.show.id;
+      return favSerie.show.id === serie.show.id;
     });
     if (isFaved === undefined) {
       favClass = '';
