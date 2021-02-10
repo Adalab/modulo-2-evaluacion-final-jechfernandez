@@ -7,6 +7,7 @@ body {
 
 .main {
   padding: 0 30px;
+  display: flex;
 
   &__list {
     display: flex;
@@ -19,17 +20,23 @@ body {
       border: 2px solid $color-highlight2;
       border-radius: 5px;
       padding: 10px;
+
+      &-faved {
+        border: 1px solid #ffffff;
+        background-color: $color-text;
+      }
     }
   }
 
-  // &__container--results{
-  //   width: 50%;
-  // }
-  // &__container--faved{
-  //   width: 40%;
-  //   background-color: $color-highlight1;
-  //   border-radius: 10px;
-  // }
+  &__container {
+    &--series {
+      width: 80%;
+      padding-left: 20px;
+    }
+    &--favourites {
+      width: 20%;
+    }
+  }
 
   &__subtitle {
     font-family: $font-main;
@@ -42,20 +49,45 @@ body {
     color: $color-text;
     margin-bottom: 15px;
     max-width: 210px;
+
+    &-faved {
+      font-family: $font-main;
+      color: white;
+    }
   }
 
   &__card--image {
     margin: 10px;
   }
 
-  &__faved--button{
-      font-family: 'Roboto', sans-serif;
-      color: $color-details;
-      border: 1px solid $color-highlight2;
-      width: 120px;
-      height: 30px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-family: $font-main;
+  &__faved--button {
+    font-family: 'Roboto', sans-serif;
+    color: $color-details;
+    border: 1px solid $color-highlight2;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: $font-main;
   }
 }
+
+.card--favourite {
+  list-style: none;
+  margin-bottom: 30px;
+  border: 2px solid $color-highlight2;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: $color-highlight1;
+  list-style: none;
+}
+
+// .clicked-card{
+//   list-style: none;
+//   margin-bottom: 30px;
+//   border: 2px solid $color-highlight2;
+//   border-radius: 5px;
+//   padding: 10px;
+//   background-color: $color-highlight1;
+//   list-style: none;
+// }
