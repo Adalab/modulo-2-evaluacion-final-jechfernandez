@@ -6,7 +6,7 @@ const formElement = document.querySelector ('.js-form');
 const searchInputElement = document.querySelector ('.js-search-input');
 const searchButtonElement = document.querySelector ('.js-search-button');
 const listElement = document.querySelector ('.js-series-list');
-const listFavouriteElement = document.querySelector ('.main__list--item');
+// const listFavouriteElement = document.querySelector ('.main__list--item');
 
 //SERIES'S ARRAYS
 let series = [];
@@ -109,3 +109,20 @@ document.addEventListener ('click', function (e) {
     paintFaved (e.target.parentElement.id);
   }
 });
+
+//LOCAL STORAGE
+
+function setInLocalStorage () {
+  localStorage.setItem ('localFavourites', JSON.stringify (favouriteSeries));
+}
+
+function getFromLocalStorage () {
+  const localStorageFavourites = localStorage.getItem ('localFavourites');
+  if (localStorageFavourites !== null) {
+    favouriteSeries = JSON.stringify (localStorageFavourites);
+    paintFaved ();
+    
+  }
+}
+
+getFromLocalStorage ();
