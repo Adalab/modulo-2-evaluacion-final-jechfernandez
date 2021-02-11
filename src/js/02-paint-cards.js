@@ -15,6 +15,7 @@ function paintSeriesCards () {
 
     htmlCode += `<li class="main__list--item js-list-element${favClass}" id="${serie.show.id}">`;
     htmlCode += `<h3 class="main__card--title">${serie.show.name}</h3>`;
+    htmlCode += `<p>${serie.show.schedule.time}</p>`;
 
     if (serie.show.image === null) {
       htmlCode += `<img class="js-image main__card--img" src="./assets/images/no-image-found.png" alt="${serie.show.name}" />`;
@@ -43,7 +44,7 @@ function paintFaved (ev) {
       }
     }
     if (!isFaved && currentSerie.show.id == parseInt (ev)) {
-      console.log (currentSerie);
+      //   console.log (currentSerie);
       favouriteSeries.push (currentSerie);
 
       let htmlCode = '<ul class="main__list--faved">';

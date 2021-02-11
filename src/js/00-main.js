@@ -6,6 +6,7 @@ const formElement = document.querySelector ('.js-form');
 const searchInputElement = document.querySelector ('.js-search-input');
 const searchButtonElement = document.querySelector ('.js-search-button');
 const listElement = document.querySelector ('.js-series-list');
+const logElement = document.querySelector('.js-log-favourites');
 
 //Series' arrays
 let series = [];
@@ -17,3 +18,13 @@ function handleForm (ev) {
 }
 
 formElement.addEventListener ('submit', handleForm);
+
+function handleLog (){
+  for ( const favouriteSerie of favouriteSeries ){
+    console.log(favouriteSerie.show.name);
+    
+  };
+  // console.log(favouriteSeries);
+};
+
+logElement.addEventListener ('click', handleLog);
