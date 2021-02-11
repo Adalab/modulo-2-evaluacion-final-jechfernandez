@@ -1,7 +1,7 @@
 'use strict';
 
 //Retrieve elements from HTML
-const apiLink = 'http://api.tvmaze.com/search/shows?q=';
+const apiLink = '//api.tvmaze.com/search/shows?q=';
 const formElement = document.querySelector ('.js-form');
 const searchInputElement = document.querySelector ('.js-search-input');
 const searchButtonElement = document.querySelector ('.js-search-button');
